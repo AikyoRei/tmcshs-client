@@ -1,0 +1,108 @@
+#lawin{
+    color: darkorange;
+}
+
+#sphoto{
+    width: 350px;
+}
+
+.introduction{
+    background-color: darkred;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 100px;
+    gap: 100px;
+    text-justify: distribute-all-lines;
+    font-size: x-large;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#introLink{
+    display: flex;
+    flex-direction: column;
+}
+
+#introToAboutMe{
+    text-decoration: none;
+    color: lightsalmon;
+    font-size: large;
+    padding: 10px;
+}
+
+#strandlink{
+    text-decoration: none;
+    color: darkslategray;
+}
+
+.strands{
+    background-image: url('../../public/bg1.jpg');
+    background-position: right;
+    background-size: 1500px;
+    color: darkslategray;
+    font-family: sans-serif;
+    line-height: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 80px;
+    gap: 80px;
+    text-justify: distribute-all-lines;
+    font-size: large;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.strands2{
+    display: flex;
+    flex-direction: column;
+}
+
+#strand{
+    font-family: sans-serif;
+    color: darkred;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+}
+
+.rows{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
+
+#tracks{
+    font-size: x-large;
+    padding: 10px 50px;
+}
+
+.home{
+    background-image: url('../../public/bg1.jpg');
+    background-position: right;
+    background-size: 1500px;
+    color: #987554;
+    outline-color: darkred;
+
+    font-family: 'Trebuchet MS';
+    font-size: x-large;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    padding: 100px;
+}
+
+.track-row:hover {
+    color: darkgoldenrod;
+}
+

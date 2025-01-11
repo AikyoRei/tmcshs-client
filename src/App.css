@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+}
+
+#slogo{
+  width: 80px;
+}
+
+#navbarlink{
+  text-decoration: none;
+  color: darkred;
+}
+
+#dd-link{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  top: 10px;
+}
+
+#root {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.head{
+  font-family: sans-serif;
+  background-image: url('../public/schoolbg.png');
+  background-position: right;
+  background-size: 1350px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.navbar{
+  background-color: whitesmoke;
+  color:darkred;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+#footlink{
+  text-decoration: none;
+  color: white;
+}
+
+.foothead{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: darkred;
+  color: white;
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  text-indent: 20px;
+}
+
+.footbody{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  background-color: darkred;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 15px;
+  margin-top: -20px;
+  text-indent: 20px;
+}
+
+.footbody2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  background-color: darkred;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 15px;
+  margin-top: -20px;
+  text-indent: 5px;
+}
+
+.footID {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  font-style: italic;
+  background-color: darkred;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 15px;
+  margin-top: -30px;
+  text-indent: 55px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: darkred;
+  color: white;
+  position: absolute;
+  top: 60px;
+  left: -10px;
+}
+
+.nav-button {
+  cursor: pointer;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.dd-button {
+  padding: 10px;
+  font-style: italic;
+}
+
+.icon1{
+  max-width: fit-content;
+  max-height: fit-content;
+  width: 25px;
+  position: relative;
+  display: flex;
+  left: 20px;
+}
+
+.icon2{
+  max-width: fit-content;
+  max-height: fit-content;
+  width: 24px;
+  position: relative;
+  display: flex;
+  left: 20px;
+}
+
+.icon3{
+  max-width: fit-content;
+  max-height: fit-content;
+  width: 40px;
+  position: relative;
+  display: flex;
+  left: 13px;
+  top: -12px;
+}
+
+
+.footer{
+  display: flex;
+  flex-direction: column;
+}
