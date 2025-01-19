@@ -8,11 +8,18 @@ import Care from './tvl/caregiving';
 import './App.css'
 import './_css/pages.css'
 import './_css/strands.css'
+import './_css/enroll.css'
+import './_css/signup.css'
+import './_css/students.css'
 import NavBar from './component/NavBar';
 import FootBar from './component/FootBar';
 import Faculty from './pages/Faculty';
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from './pages/Register';
+import StudentsPage from './pages/Students';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
 
@@ -30,6 +37,10 @@ function App() {
           <Route path="/stem" element={<Stem />} />
           <Route path="/bread" element={<Bread />} />
           <Route path="/care" element={<Care />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/students" element={<StudentsPage />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <FootBar />
       </BrowserRouter>

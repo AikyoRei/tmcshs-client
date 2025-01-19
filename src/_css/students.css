@@ -1,0 +1,28 @@
+.students-page {
+    padding: 20px;
+}
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black
+  }
+  
+  .students-table th,
+  .students-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  
+  .students-table td button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .students-table td button:hover {
+    background-color: #f0f0f0;
+  }
+  
