@@ -4,9 +4,34 @@ const Home = () => {
   return (
     <body>
       <div className="home">
-        <h1>Welcome,</h1>
-        <h1 id="lawin">Lawins!</h1>
-        <img src="lawin.png" alt="LAWIN"/>
+        <div id="wclawins">
+          <h1>Welcome,</h1>
+          <h1 id="lawin">Lawins!</h1>
+          <img src="lawin.png" alt="LAWIN"/>
+        </div>
+        <table id="homechoices">
+          <tr>
+            <td id="td2">
+              <Link to="/register">
+                <b className="choice track-column">Enroll Now!</b>
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td id="td2">
+              <a href="#strand" id='scroll'>
+                <b className="choice track-column">Tracks & Strands</b>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td id="td2">
+              <a href="#introLink" id="scroll">
+                <b className="choice track-column">TMCSHS Tales</b>
+              </a>
+            </td>
+          </tr>
+        </table>
       </div>
       <div className="introduction">
           <div id="introLink">

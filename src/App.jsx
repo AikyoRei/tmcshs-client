@@ -9,11 +9,13 @@ import './App.css'
 import './_css/pages.css'
 import './_css/strands.css'
 import './_css/enroll.css'
+import './_css/enrollpage.css'
 import './_css/signup.css'
 import './_css/students.css'
 import NavBar from './component/NavBar';
 import FootBar from './component/FootBar';
 import Faculty from './pages/Faculty';
+import ALS from './pages/ALS';
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from './pages/Register';
@@ -30,6 +32,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/faculty" element={<Faculty />} />
+          <Route path="/als" element={<ALS />} />
           <Route path="/tmcshs" element={<TMCSHS />} />
           <Route path="/enrollment" element={<Enroll />} />
           <Route path="/abm" element={<Abm />} />

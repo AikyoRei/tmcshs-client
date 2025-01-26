@@ -87,22 +87,47 @@
     background-image: url('../../public/bg1.jpg');
     background-position: right;
     background-size: 1500px;
-    color: #987554;
-    outline-color: darkred;
 
+    display: flex;
+    flex-direction: row;
+}
+
+#wclawins{
     font-family: 'Trebuchet MS';
     font-size: x-large;
+    color: #987554;
+    outline-color: darkred;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
-
     flex-wrap: wrap;
-
     padding: 100px;
+}
+
+.choice{
+    color: white;
+    font-size: larger;
+}
+
+#td2{
+    border: 0pt;
+    background-color: black;
+    opacity: 40%;
+    margin: 0px;
+    padding: 20px;
+}
+
+#homechoices{
+    padding: 50px;
 }
 
 .track-row:hover {
     color: darkgoldenrod;
+}
+
+.track-column:hover {
+    color: whitesmoke;
+    font-size: x-large;
 }
 

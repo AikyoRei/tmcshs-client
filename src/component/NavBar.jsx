@@ -72,6 +72,9 @@ function NavBar() {
           </Link>
             </div>
           </b>
+        <Link id='navbarlink' to={"/als"}>
+          <b className='nav-button track-row'>ALS</b>
+        </Link>
         <Link id='navbarlink' to={"/faculty"}>
             <b className='nav-button track-row'>FACULTY AND STAFF</b>
         </Link>

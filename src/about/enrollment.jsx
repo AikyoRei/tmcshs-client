@@ -1,6 +1,12 @@
 const Enroll = () => {
     return (
-      <div>Enrollment</div>
+      <body>
+        <div id="EnrollHere">
+          <h1>Enroll at</h1>
+          <h1 id="lawin">TMCSHS</h1>
+        </div>
+      </body>
+      
     )
   }
   
