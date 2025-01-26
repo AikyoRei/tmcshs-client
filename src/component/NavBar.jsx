@@ -26,9 +26,19 @@ function NavBar() {
 
   return (
     <>
-      <div className="head">
-        <img id='slogo' src={schoolLogo} alt="TMCSHS"/>
-        <h1>TRECE MARTIRES CITY SENIOR HIGH SCHOOL</h1>
+      <div className="headmain">
+        <div className='head'>
+          <img id='slogo' src={schoolLogo} alt="TMCSHS"/>
+          <h1>TRECE MARTIRES CITY SENIOR HIGH SCHOOL</h1>
+        </div>
+        <div className='head2'>
+          <Link id='headbarlink' to={"/login"}>
+            <b id='loginpo' className='track-row'>Log In</b>
+          </Link>
+          <Link id='headbarlink' to={"/enrollment"}>
+            <b id='loginpo' className='track-row'>Enroll</b>
+          </Link>
+        </div>
       </div>
 
       <div className="navbar">

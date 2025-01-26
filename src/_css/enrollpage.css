@@ -1,13 +1,70 @@
 #EnrollHere{
+    background-image: url('../../public/bg8.jpg');
+    background-size: 500px;
+    background-position: top;
+}
+
+#tmcshscolor{
+    color: #FFA500;
+}
+
+#Enrollhead{
     font-family: 'Trebuchet MS';
     font-size: large;
-    color: #987554;
+    color: darkred;
     outline-color: darkred;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    padding: 0px 0px 0px 120px;
+    padding: 50px 0px 0px 120px;
+}
+
+#Enrollbody{
+    display: flex;
+    flex-direction: column;
+}
+
+.welcomebro{
+    font-family: sans-serif;
+    padding: 20px 0px 20px 120px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1in;
+}
+
+#enrolltable{
+    border: 0pt;
+    background-color: darkred;
+    color: white;
+}
+
+#tablelink{
+    text-decoration: none;
+    color: white;
+}
+
+.track-bro:hover{
+    color: #FFA500;
+    font-size: large;
+}
+
+.track-enroll:hover{
+    color: darkred;
+}
+
+#lezgoEnroll{
+    background-color: darkgoldenrod;
+    padding: 20px;
+}
+
+#enrolllink{
+    text-decoration: none;
+    color: white;
+}
+
+#overalltable{
+    padding: 20px;
 }
 

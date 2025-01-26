@@ -12,7 +12,7 @@ const Home = () => {
         <table id="homechoices">
           <tr>
             <td id="td2">
-              <Link to="/register">
+              <Link to="/enrollment">
                 <b className="choice track-column">Enroll Now!</b>
               </Link>
             </td>

@@ -11,6 +11,12 @@ body {
   color: darkred;
 }
 
+#headbarlink{
+  text-decoration: none;
+  color: darkred;
+  font-size: larger;
+}
+
 #dd-link{
   text-decoration: none;
   color: white;
@@ -26,15 +32,30 @@ body {
 
 .head{
   font-family: sans-serif;
-  background-image: url('../public/schoolbg.png');
-  background-position: right;
-  background-size: 1350px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   padding: 10px;
+}
+
+.head2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0px;
+}
+
+.headmain{
+  background-image: url('../public/schoolbg.png');
+  background-position: right;
+  background-size: 1350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
 }
 
 .navbar{
@@ -156,4 +177,11 @@ body {
 .footer{
   display: flex;
   flex-direction: column;
+}
+
+#loginpo{
+  background-color: pink;
+  font-family: monospace;
+  opacity: 80%;
+  padding: 10px 20px 10px 20px;
 }
