@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Stem = () => {
     return (
       <body>
@@ -109,6 +111,11 @@ const Stem = () => {
                 <td>Work Immersion</td>
               </tr>
             </table>
+          <div className="enrollbuttonsec">
+          <Link to="/register" id="enrolllink">
+                  <b id="lezgoEnroll" className="track-enroll">ENROLL NOW!</b>
+                </Link>
+          </div>
         </div>
       </body>
     )

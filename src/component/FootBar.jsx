@@ -3,6 +3,7 @@
 const FootBar = () => {
   return (
     <body className="footer">
+      <div id="footcolumn1">
         <div className="foothead">
         <h3>Trece Martires City Senior High School</h3>
         </div>
@@ -19,6 +20,12 @@ const FootBar = () => {
                 <a className="track-row" id='footlink' href="https://www.facebook.com/tmcshs">https://www.facebook.com/tmcshs</a>
         </div>
         <div className="footID">School ID: 342292</div>
+      </div>
+      <div id="footcolumn2">
+        <a href="#slogo">
+        <img id='arrowicon' src="arrowup.png" alt="Go Up"/>
+        </a>
+      </div>
     </body>
   )
 }

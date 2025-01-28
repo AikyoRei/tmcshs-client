@@ -175,8 +175,10 @@ body {
 
 
 .footer{
+  background-color: darkred;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #loginpo{
@@ -184,4 +186,19 @@ body {
   font-family: monospace;
   opacity: 80%;
   padding: 10px 20px 10px 20px;
+}
+
+#footcolumn1{
+  display: flex;
+  flex-direction: column;
+}
+
+#footcolumn2{
+  display: flex;
+  align-items: end;
+  padding: 20px 40px 10px 0px;
+}
+
+#arrowicon{
+  width: 100px;
 }

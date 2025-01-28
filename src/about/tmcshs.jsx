@@ -1,6 +1,8 @@
 const TMCSHS = () => {
     return (
-      <div>TMCSHS</div>
+      <body>
+        <b>About TMCSHS</b>
+      </body>
     )
   }
   

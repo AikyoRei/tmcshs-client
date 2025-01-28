@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Humss = () => {
     return (
       <body>
@@ -108,6 +110,11 @@ const Humss = () => {
                 <td></td>
               </tr>
             </table>
+          <div className="enrollbuttonsec">
+          <Link to="/register" id="enrolllink">
+            <b id="lezgoEnroll" className="track-enroll">ENROLL NOW!</b>
+          </Link>
+          </div>
         </div>
       </body>
     )

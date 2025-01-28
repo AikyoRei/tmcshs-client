@@ -12,6 +12,8 @@ import './_css/enroll.css'
 import './_css/enrollpage.css'
 import './_css/signup.css'
 import './_css/students.css'
+import './_css/als.css'
+import './_css/about.css'
 import NavBar from './component/NavBar';
 import FootBar from './component/FootBar';
 import Faculty from './pages/Faculty';

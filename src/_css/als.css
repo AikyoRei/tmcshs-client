@@ -1,0 +1,28 @@
+.alsHead{
+    font-family: 'monospace';
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 40pt;
+    padding: 50px 0px 20px 0px;
+}
+
+#ALStable{
+    padding: 20px 150px 20px 150px;
+}
+
+.alsbuttonsec{
+    background-image: url('../../public/bg6.jpg');
+    background-size: 500px;
+    background-position: top;
+}
+
+.enrollbuttonsec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
