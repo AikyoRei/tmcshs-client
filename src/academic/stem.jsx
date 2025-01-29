@@ -112,7 +112,7 @@ const Stem = () => {
               </tr>
             </table>
           <div className="enrollbuttonsec">
-          <Link to="/register" id="enrolllink">
+          <Link to="/enrollment" id="enrolllink">
                   <b id="lezgoEnroll" className="track-enroll">ENROLL NOW!</b>
                 </Link>
           </div>
