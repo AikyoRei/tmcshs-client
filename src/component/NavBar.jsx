@@ -32,6 +32,9 @@ function NavBar() {
           <h1>TRECE MARTIRES CITY SENIOR HIGH SCHOOL</h1>
         </div>
         <div className='head2'>
+          <Link id='headbarlink' to={"/signup"}>
+            <b id='loginpo' className='track-row'>Register</b>
+          </Link>
           <Link id='headbarlink' to={"/login"}>
             <b id='loginpo' className='track-row'>Log In</b>
           </Link>

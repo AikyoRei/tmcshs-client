@@ -34,16 +34,6 @@
     line-height: 1in;
 }
 
-#enrolltable{
-    border: 0pt;
-    background-color: darkred;
-    color: white;
-}
-
-#tablelink{
-    text-decoration: none;
-    color: white;
-}
 
 .track-bro:hover{
     color: #FFA500;
@@ -64,7 +54,23 @@
     color: white;
 }
 
-#overalltable{
-    padding: 20px;
+#enrollna{
+    width: 1000px;
 }
 
+.backgroundlang{
+    background-color: white;
+    padding: 50px;
+    line-height: 0.5in;
+}
+
+.indentbro{
+    text-indent: 0.5in;
+    display: flex;
+    flex-direction: column;
+}
+
+#fbpagelink{
+    text-decoration: none;
+    color: red;
+}
