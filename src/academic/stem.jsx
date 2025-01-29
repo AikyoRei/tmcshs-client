@@ -9,7 +9,7 @@ const Stem = () => {
             <img id='stemlogo' src="STEM.png" alt="STEM Logo"/>
           </div>
           <div className="stemIntro">
-            <b>The Science, Technology, Engineering, and Mathematics strand provides students with practical experiences and theoretical knowledge to develop problem-solving skills and analytical thinking. In this strand, students are prepared for careers in fields such as engineering, medicine, information technology, and scientific research, adapting them to our technology-driven world.</b>
+            <a>The Science, Technology, Engineering, and Mathematics strand provides students with practical experiences and theoretical knowledge to develop problem-solving skills and analytical thinking. In this strand, students are prepared for careers in fields such as engineering, medicine, information technology, and scientific research, adapting them to our technology-driven world.</a>
           </div>
         <div className="stemCpath">
             <img id='cPath' src="Cpath.png" alt="Career Paths"/>
@@ -19,9 +19,9 @@ const Stem = () => {
         <div className="stemRequirements">
           <b id='stemRequireHead'>REQUIREMENTS</b>
           <div className="stemRequireRow">
-            <b>For Incoming Grade 11 Students</b>
-            <b>1. Final grade in Mathematics and Science no lower than 85</b>
-            <b>2. General Average no lower than 83</b>
+            <a>For Incoming Grade 11 Students</a>
+            <a>1. Final grade in Mathematics and Science no lower than 85</a>
+            <a>2. General Average no lower than 83</a>
           </div>
         </div>
         <div className="stemSubjects">

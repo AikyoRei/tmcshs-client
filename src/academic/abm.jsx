@@ -9,7 +9,7 @@ const Abm = () => {
             <img id='stemlogo' src="ABM.png" alt="ABM Logo"/>
           </div>
           <div className="stemIntro">
-            <b>The Accountancy, Business, and Management Strand serves as a gateway to pursuing college degrees in business-related fields. It covers fundamental principles of financial management, accounting, and corporate operations. The courses within this strand are designed to impart essential skills necessary for success in future careers and entrepreneurial ventures.</b>
+            <a>The Accountancy, Business, and Management Strand serves as a gateway to pursuing college degrees in business-related fields. It covers fundamental principles of financial management, accounting, and corporate operations. The courses within this strand are designed to impart essential skills necessary for success in future careers and entrepreneurial ventures.</a>
           </div>
         <div className="stemCpath">
             <img id='cPath' src="Cpath.png" alt="Career Paths"/>
@@ -19,8 +19,8 @@ const Abm = () => {
         <div className="abmRequirements">
           <b id='stemRequireHead'>REQUIREMENTS</b>
           <div className="stemRequireRow">
-            <b>1. </b>
-            <b>2. </b>
+            <a>1. </a>
+            <a>2. </a>
           </div>
         </div>
         <div className="abmSubjects">

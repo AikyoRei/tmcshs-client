@@ -40,7 +40,7 @@
 .stemIntro{
     color: black;
     text-indent: 0.5in;
-    font-family: monospace;
+    /* font-family: monospace; */
     font-size: large;
     padding: 12px 185px;
     line-height: 40px;
@@ -73,7 +73,7 @@
 }
 
 #stemRequireHead{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     color: white;
     padding: 40px 185px;
     font-size: large;
@@ -111,10 +111,10 @@
     flex-direction: column;
     color: white;
     text-indent: 0.5in;
-    font-family: monospace;
+   /* font-family: monospace; */
     font-size: large;
     padding: 12px 185px;
-    line-height: 40px;
+    line-height: 0.5in;
     text-align: justify;
     position: relative;
     bottom: 20px;

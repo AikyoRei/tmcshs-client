@@ -9,7 +9,7 @@ const Humss = () => {
             <img id='stemlogo' src="HUMSS.png" alt="HUMSS Logo"/>
           </div>
           <div className="stemIntro">
-            <b>The Humanities and Social Sciences strand delves into the realms of liberal arts, equipping students with the ability to contemplate, articulate, and engage with a wide array of humanistic and societal issues. Students enrolled in this strand participate in classes tailored to sharpen their cognitive faculties, enhance interpersonal aptitude, introduce them to cultural and linguistic variety, and foster multidisciplinary critical thinking.</b>
+            <a>The Humanities and Social Sciences strand delves into the realms of liberal arts, equipping students with the ability to contemplate, articulate, and engage with a wide array of humanistic and societal issues. Students enrolled in this strand participate in classes tailored to sharpen their cognitive faculties, enhance interpersonal aptitude, introduce them to cultural and linguistic variety, and foster multidisciplinary critical thinking.</a>
           </div>
         <div className="stemCpath">
             <img id='cPath' src="Cpath.png" alt="Career Paths"/>
@@ -19,8 +19,8 @@ const Humss = () => {
         <div className="humssRequirements">
           <b id='stemRequireHead'>REQUIREMENTS</b>
           <div className="stemRequireRow">
-            <b>1. </b>
-            <b>2. </b>
+            <a>1. </a>
+            <a>2. </a>
           </div>
         </div>
         <div className="humssSubjects">
