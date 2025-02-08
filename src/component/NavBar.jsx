@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import schoolLogo from '/logo.png'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { AuthContext } from '../AuthProvider'
 
 function NavBar() {
   const [isAboutOpen, setIsAboutOpen] = useState(false)
@@ -23,6 +24,15 @@ function NavBar() {
     setIsAboutOpen(false)
     setIsAcadOpen(false)
   }
+  
+  const { isTokenValid, setIsTokenValid } = useContext(AuthContext);
+  const handleLogout = () => {
+    localStorage.setItem("token", "")
+    localStorage.setItem("userId", "")
+    window.location.href = "/login"
+    setIsTokenValid(false)
+    console.log(isTokenValid)
+  }
 
   return (
     <>
@@ -32,12 +42,22 @@ function NavBar() {
           <h1>TRECE MARTIRES CITY SENIOR HIGH SCHOOL</h1>
         </div>
         <div className='head2'>
-          <Link id='headbarlink' to={"/signup"}>
-            <b id='loginpo' className='track-row'>Register</b>
-          </Link>
-          <Link id='headbarlink' to={"/login"}>
-            <b id='loginpo' className='track-row'>Log In</b>
-          </Link>
+          {
+            !isTokenValid && <>
+              <Link id='headbarlink' to={"/signup"}>
+                <b id='loginpo' className='track-row'>Register</b>
+              </Link>
+              <Link id='headbarlink' to={"/login"}>
+                <b id='loginpo' className='track-row'>Log In</b>
+              </Link>
+            </>
+          } {
+            isTokenValid && <>
+              <Link id='headbarlink' to={"/login"} onClick={handleLogout}>
+                <b id='loginpo' className='track-row'>Log Out</b>
+              </Link>
+            </>
+          }
           <Link id='headbarlink' to={"/enrollment"}>
             <b id='loginpo' className='track-row'>Enroll</b>
           </Link>

@@ -25,14 +25,14 @@ const Signup = () => {
 
   const onDrop = async (acceptedFiles) => {
     const file = acceptedFiles[0];
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", "ml_default"); // Set your upload preset if needed
+    const tempData = new FormData();
+    tempData.append("file", file);
+    tempData.append("upload_preset", "ml_default"); // Set your upload preset if needed
 
     try {
       const response = await axios.post(
         `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME}/image/upload`,
-        formData,
+        tempData,
       );
       setFormData({
         ...formData,
@@ -100,6 +100,7 @@ const Signup = () => {
           profile_pic: ''
         });
         localStorage.setItem("token", result.access_token)
+        window.location.href = "/"
       } else {
         setError(result.error || 'Something went wrong');
         setSuccess('');

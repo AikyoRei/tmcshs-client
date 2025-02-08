@@ -35,7 +35,6 @@ const Login = () => {
       });
 
       const result = await response.json();
-      console.log(response, result)
 
       if (response.ok) {
         setSuccess('Login successful!');
@@ -43,9 +42,10 @@ const Login = () => {
 
         // If the backend returns a token or session ID in the response body
         // You can store it in localStorage for further use
-        const token = result.token || '';  // Adjust based on what your backend returns
+        const token = result.access_token || '';  // Adjust based on what your backend returns
         if (token) {
-          localStorage.setItem('authToken', token);  // Store the token in localStorage
+          localStorage.setItem('token', token);  // Store the token in localStorage
+          window.location.href = "/"
         }
 
         // Redirect to another page or update your application state

@@ -9,6 +9,7 @@ export const verifyToken = async (token) => {
     });
 
     console.log(response.data); // Log success message
+    localStorage.setItem("userId",response.data.user_id)
     return true;
   } catch (error) {
     console.error('Token verification failed:', error.response ? error.response.data : error.message);
