@@ -1,13 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../AuthProvider';
 
 const StudentsPage = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const {token} = useContext(AuthContext)
 
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await fetch("https://tmcshs-server.vercel.app/api/students/");
+        const response = await fetch("https://tmcshs-server.vercel.app/api/students/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = await response.json();
         setStudents(data);
       } catch (error) {

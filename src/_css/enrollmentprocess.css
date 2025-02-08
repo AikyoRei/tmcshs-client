@@ -1,0 +1,99 @@
+/* Full Page Centering */
+.enrollment-process {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  justify-content: center;
+}
+
+/* Step Tracker */
+.enrollment-process__steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.enrollment-process__step-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Step Icons */
+.enrollment-process__step-icon {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+/* Step States */
+.enrollment-process__step-item.completed .enrollment-process__step-icon {
+  color: green;
+}
+
+.enrollment-process__step-item.active .enrollment-process__step-icon {
+  color: darkred;
+}
+
+.enrollment-process__step-item.disabled .enrollment-process__step-icon {
+  color: gray;
+}
+
+/* Content Box */
+.enrollment-process__content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+/* Title */
+.enrollment-process__title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.enrollment-process__description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.enrollment-process__button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 100%;
+  transition: background 0.3s ease-in-out;
+}
+
+.enrollment-process__button--next {
+  background-color: darkred;
+  color: white;
+}
+
+.enrollment-process__button--back {
+  background-color: #6c757d;
+  color: white;
+}
+
+.enrollment-process__button--finish {
+  background-color: #28a745;
+  color: white;
+}
+
+.enrollment-process__icon {
+  font-size: 50px;
+  color: darkred;
+  margin-bottom: 15px;
+}

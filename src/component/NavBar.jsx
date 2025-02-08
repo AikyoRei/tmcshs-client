@@ -58,7 +58,7 @@ function NavBar() {
               </Link>
             </>
           }
-          <Link id='headbarlink' to={"/enrollment"}>
+          <Link id='headbarlink' to={isTokenValid? "enrollment-process" : "/enrollment"}>
             <b id='loginpo' className='track-row'>Enroll</b>
           </Link>
         </div>

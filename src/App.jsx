@@ -7,6 +7,7 @@ import './_css/signup.css'
 import './_css/students.css'
 import './_css/als.css'
 import './_css/about.css'
+import './_css/enrollmentprocess.css'
 import AuthProvider from './AuthProvider';
 import AppRouter from './AppRouter';
 

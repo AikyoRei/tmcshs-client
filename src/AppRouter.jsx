@@ -26,9 +26,10 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { AuthContext } from './AuthProvider';
 import { useContext } from 'react';
+import EnrollmentProcess from './pages/EnrollmentProcess';
 
 function AppRouter() {
-  const { isTokenValid } = useContext(AuthContext);
+  const { isTokenValid, isStaff } = useContext(AuthContext);
 
   return (
     <>
@@ -49,10 +50,17 @@ function AppRouter() {
               <Route path="/bread" element={<Bread />} />
               <Route path="/care" element={<Care />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/students" element={<StudentsPage />} />
+              {
+                isTokenValid && isStaff &&
+                <Route path="/students" element={<StudentsPage />} />
+              }
               {
                 !isTokenValid &&
                 <Route path="/signup" element={<Signup />} />
+              }
+              {
+                isTokenValid && !isStaff &&
+                <Route path="/enrollment-process" element={<EnrollmentProcess />} />
               }
               <Route path="/login" element={<Login />} />
             </Routes>
