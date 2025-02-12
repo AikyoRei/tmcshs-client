@@ -1,13 +1,21 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider';
 import PropTypes from 'prop-types';
-
-const handleShowPicture = (url) => window.open(url, "_blank");
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const StudentsPage = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const { token } = useContext(AuthContext);
+  const [visibleTables, setVisibleTables] = useState({
+    finalRequirements: true,
+    readingAssessment: true,
+    enrollmentForms: true,
+    enrolledStudents: true,
+    unenrolledStudents: true,
+  });
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -26,11 +34,45 @@ const StudentsPage = () => {
     fetchStudents();
   }, [token]);
 
-  const handleEnroll = (studentId) => console.log(`Enrolling student with ID: ${studentId}`);
-  const handleUnenroll = (studentId) => console.log(`Unenrolling student with ID: ${studentId}`);
-  const handleAccept = (studentId) => console.log(`Accepted student ID: ${studentId}`);
-  const handleDecline = (studentId) => console.log(`Declined student ID: ${studentId}`);
-  const handleDelete = (studentId) => console.log(`Deleted student ID: ${studentId}`);
+  const handleSave = async (userId, formData) => {
+    try {
+      const response = await axios.put(`https://tmcshs-server.vercel.app/api/students/${userId}/`, formData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      setStudents((prevStudents) =>
+        prevStudents.map((student) => (student.user === userId ? response.data : student))
+      );
+    } catch {
+      console.error("Failed to save changes.");
+    }
+  };
+
+  const handleDelete = async (userId) => {
+    try {
+      await axios.delete(`https://tmcshs-server.vercel.app/api/students/${userId}/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setStudents((prevStudents) => prevStudents.filter(student => student.user !== userId));
+    } catch {
+      console.error("Failed to delete student.");
+    }
+  };
+
+  const toggleTableVisibility = (tableName) => {
+    setVisibleTables((prev) => ({
+      ...prev,
+      [tableName]: !prev[tableName],
+    }));
+  };
+
+  const filteredStudents = students.filter((student) =>
+    `${student.first_name} ${student.middle_name || ''} ${student.last_name}`
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase()) ||
+    student.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    student.student_number?.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   if (loading) return <p>Loading...</p>;
 
@@ -38,39 +80,74 @@ const StudentsPage = () => {
     <div className='students-page'>
       <h1>Students List</h1>
 
-      {/* Final Requirements Submission */}
-      <Table title="Final Requirements Submission" students={students.filter(s => s.submitted_requirements)}>
-        {(student) => <button onClick={() => handleEnroll(student.id)}>Enroll</button>}
-        {(student) => <button onClick={() => handleUnenroll(student.id)}>Unenroll</button>}
-      </Table>
+      {/* Search Bar */}
+      <input
+        type="text"
+        placeholder="Search by name, email, or student number..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="search-bar"
+        style={{
+          marginBottom: '10px'
+        }}
+      />
 
-      {/* Reading Assessment Completion */}
-      <Table title="Reading Assessment Completion" students={students.filter(s => s.reading_test_done)}>
-        {(student) => (
-          <>
-            <button onClick={() => handleAccept(student.id)}>Accept</button>
-            <button onClick={() => handleDecline(student.id)}>Decline</button>
-          </>
-        )}
-      </Table>
+      {/* Table Visibility Controls */}
+      <div className="table-filters">
+        {Object.keys(visibleTables).map((key) => (
+          <label key={key}>
+            <input
+              type="checkbox"
+              checked={visibleTables[key]}
+              onChange={() => toggleTableVisibility(key)}
+            />
+            Show {key.replace(/([A-Z])/g, ' $1').trim()}
+          </label>
+        ))}
+      </div>
 
-      {/* Enrollment Form Submissions */}
-      <Table title="Enrollment Form Submissions" students={students.filter(s => s.filled_enrollment_form)}>
-        {(student) => (
-          <>
-            <button onClick={() => handleAccept(student.id)}>Accept</button>
-            <button onClick={() => handleDecline(student.id)}>Decline</button>
-          </>
-        )}
-      </Table>
+      {visibleTables.finalRequirements && (
+        <Table title="Final Requirements Submission" students={filteredStudents.filter(s => s.stepsTaken === 5)}>
+          {(student) => (
+            <>
+              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 6, is_enrolled: true })}>Enroll</button>
+              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 4, is_enrolled: false })}>Decline</button>
+            </>
+          )}
+        </Table>
+      )}
 
-      {/* Enrolled Students */}
-      <Table title="Enrolled Students" students={students.filter(s => s.is_enrolled)} />
+      {visibleTables.readingAssessment && (
+        <Table title="Reading Assessment Completion" students={filteredStudents.filter(s => s.stepsTaken === 3)}>
+          {(student) => (
+            <>
+              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 4 })}>Accept</button>
+              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 2 })}>Decline</button>
+            </>
+          )}
+        </Table>
+      )}
 
-      {/* Unenrolled Students */}
-      <Table title="Unenrolled Students" students={students.filter(s => !s.is_enrolled)}>
-        {(student) => <button onClick={() => handleDelete(student.id)}>Delete</button>}
-      </Table>
+      {visibleTables.enrollmentForms && (
+        <Table title="Enrollment Form Submissions" students={filteredStudents.filter(s => s.stepsTaken === 1)}>
+          {(student) => (
+            <>
+              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 2 })}>Accept</button>
+              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 0 })}>Decline</button>
+            </>
+          )}
+        </Table>
+      )}
+
+      {visibleTables.enrolledStudents && (
+        <Table title="Enrolled Students" students={filteredStudents.filter(s => s.is_enrolled)} />
+      )}
+
+      {visibleTables.unenrolledStudents && (
+        <Table title="Unenrolled Students" students={filteredStudents.filter(s => !s.is_enrolled && s.stepsTaken === 0)}>
+          {(student) => <button onClick={() => handleDelete(student.user)}>Delete</button>}
+        </Table>
+      )}
     </div>
   );
 };
@@ -86,7 +163,7 @@ const Table = ({ title, students, children }) => (
           <th>Grade Level</th>
           <th>Contact</th>
           <th>Email</th>
-          {children && <th>Actions</th>}
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -98,12 +175,18 @@ const Table = ({ title, students, children }) => (
               <td>{student.grade_level}</td>
               <td>{student.contact_number}</td>
               <td>{student.email}</td>
-              {children && <td> <button onClick={() => handleShowPicture(student.profile_pic)}>Show Picture</button>{children(student)}</td>}
+              
+                <td>
+                  <Link to={`/students/${student.user}`}>
+                    <button>Show Profile</button>
+                  </Link>
+                  {children && children(student)}
+                </td>
             </tr>
           ))
         ) : (
           <tr>
-            <td colSpan={6}>No students in this category</td>
+            <td colSpan={6}>No students found</td>
           </tr>
         )}
       </tbody>
@@ -112,9 +195,9 @@ const Table = ({ title, students, children }) => (
 );
 
 Table.propTypes = {
-  title: PropTypes.string,
-  students: PropTypes.array,
-  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  students: PropTypes.array.isRequired,
+  children: PropTypes.func,
 };
 
 export default StudentsPage;

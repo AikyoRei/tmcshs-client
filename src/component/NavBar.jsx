@@ -25,7 +25,7 @@ function NavBar() {
     setIsAcadOpen(false)
   }
   
-  const { isTokenValid, setIsTokenValid, isStaff } = useContext(AuthContext);
+  const { isTokenValid, setIsTokenValid, isStaff, userId } = useContext(AuthContext);
   const handleLogout = () => {
     localStorage.setItem("token", "")
     localStorage.setItem("userId", "")
@@ -63,9 +63,14 @@ function NavBar() {
               <Link id='headbarlink' to={"/students"}>
                 <b id='loginpo' className='track-row'>Manage Students</b>
               </Link>
-              : <Link id='headbarlink' to={isTokenValid? "enrollment-process" : "/enrollment"}>
-                <b id='loginpo' className='track-row'>Enroll</b>
-              </Link>
+              : <>
+                <Link id='headbarlink' to={isTokenValid? "enrollment-process" : "/enrollment"}>
+                  <b id='loginpo' className='track-row'>Enroll</b>
+                </Link>
+                <Link id='headbarlink' to={`/students/${userId}`}>
+                  <b id='loginpo' className='track-row'>Profile</b>
+                </Link>
+              </>
           }
         </div>
       </div>

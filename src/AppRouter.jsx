@@ -27,14 +27,14 @@ import Login from './pages/Login';
 import { AuthContext } from './AuthProvider';
 import { useContext } from 'react';
 import EnrollmentProcess from './pages/EnrollmentProcess';
+import StudentPage from './pages/Student';
 
 function AppRouter() {
   const { isTokenValid, isStaff } = useContext(AuthContext);
-
   return (
     <>
       {
-        isTokenValid === undefined 
+        isTokenValid === undefined  
           ? <>Loading...</> 
           : <BrowserRouter>
             <NavBar />
@@ -53,6 +53,10 @@ function AppRouter() {
               {
                 isTokenValid && isStaff &&
                 <Route path="/students" element={<StudentsPage />} />
+              }
+              {
+                isTokenValid &&
+                <Route path="/students/:userId" element={<StudentPage />} />
               }
               {
                 !isTokenValid &&

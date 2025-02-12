@@ -56,10 +56,12 @@ const EnrollmentProcess = () => {
 
   const steps = [
     { id: 1, title: "Enrollment Form", icon: <FaWpforms className="enrollment-process__icon" style={{ color:  stepNumber <= 1?'darkred':'#28a745'}}/> },
-    { id: 2, title: "Verification", icon: <FaClipboardCheck className="enrollment-process__icon" style={{ color:  stepNumber <= 2?'darkred':'#28a745'}}/> },
+    { id: 2, title: "Verification", icon: <FaCheckCircle className="enrollment-process__icon" style={{ color:  stepNumber <= 2?'darkred':'#28a745'}}/> },
     { id: 3, title: "Reading Assessment", icon: <FaBookReader className="enrollment-process__icon" style={{ color:  stepNumber <= 3?'darkred':'#28a745'}}/> },
     { id: 4, title: "Verification", icon: <FaCheckCircle className="enrollment-process__icon" style={{ color:  stepNumber <= 4?'darkred':'#28a745'}}/> },
-    { id: 5, title: "Submit Requirements", icon: <FaFileUpload className="enrollment-process__icon" style={{ color:  stepNumber <= 5?'darkred':'#28a745'}}/> }
+    { id: 5, title: "Submit Requirements", icon: <FaFileUpload className="enrollment-process__icon" style={{ color:  stepNumber <= 5?'darkred':'#28a745'}}/> },
+    { id: 6, title: "Verification", icon: <FaCheckCircle className="enrollment-process__icon" style={{ color:  stepNumber <= 6?'darkred':'#28a745'}}/> },
+    { id: 7, title: "Enrolled", icon: <FaClipboardCheck className="enrollment-process__icon" style={{ color:  stepNumber <= 6?'darkred':'#28a745'}}/>},
   ];
 
   return (
@@ -86,8 +88,10 @@ const EnrollmentProcess = () => {
         {stepNumber === 1 && <p>Please fill out the enrollment form.</p>}
         {stepNumber === 2 && <p>Status: Waiting for admin approval.</p>}
         {stepNumber === 3 && <p>Take the online reading test.</p>}
-        {stepNumber === 4 && <p>Waiting for admin approval.</p>}
+        {stepNumber === 4 && <p>Status: Waiting for admin approval.</p>}
         {stepNumber === 5 && <p>Submit all requirements in a brown envelope.</p>}
+        {stepNumber === 6 && <p>Status: Waiting for admin approval.</p>}
+        {stepNumber === 7 && <p>You are now enrolled!</p>}
 
         {/* Buttons with Loading State */}
         <div className="enrollment-process__buttons">
@@ -106,7 +110,7 @@ const EnrollmentProcess = () => {
               className="enrollment-process__button enrollment-process__button--next"
               onClick={() => setStepNumber(stepNumber + 1)}
               disabled={isLoading}
-            >
+              >
               {isLoading ? "Processing..." : "Next"}
             </button>
           )}
@@ -114,6 +118,7 @@ const EnrollmentProcess = () => {
           {stepNumber === 5 && (
             <button
               className="enrollment-process__button enrollment-process__button--finish"
+              onClick={() => setStepNumber(stepNumber + 1)}
               disabled={isLoading}
             >
               {isLoading ? "Processing..." : "Finish"}
