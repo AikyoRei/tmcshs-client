@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom"
 
-const Abm = () => {
+const TVL = () => {
     return (
       <body>
-        <div className="abmrow">
+        <div className="tvlBG">
           <div className="stemHead">
-            <b>ABM</b>
-            <img id='stemlogo' src="ABM.png" alt="ABM Logo"/>
+            <b>TVL</b>
+            <img id='stemlogo' src="STEM.png" alt="STEM Logo"/>
           </div>
           <div className="stemIntro">
-            <a>The Accountancy, Business, and Management Strand serves as a gateway to pursuing college degrees in business-related fields. It covers fundamental principles of financial management, accounting, and corporate operations. The courses within this strand are designed to impart essential skills necessary for success in future careers and entrepreneurial ventures.</a>
+            <a>The Technical, Vocational, and Livelihood Track offers specialized training and skills development tailored to various industries and professions. Students engage in hands-on learning experiences, acquiring practical skills and knowledge directly applicable to specific trades or vacations. This track equips students with the competencies needed to pursue employment opportunities immediately after graduation or to further their education through technical courses or apprenticeships.</a>
           </div>
         <div className="stemCpath">
             <img id='cPath' src="Cpath.png" alt="Career Paths"/>
-            <img id='cPathText' src="ABMcPath.png" alt="Career Paths Examples"/>
+            <img id='cPathText' src="CpathText.png" alt="Career Paths Examples"/>
         </div>
         </div>
 
-        <div className="abmSubjects">
+        <div className="tvlSubjects">
           <h1 id='stemSub'>GRADE 11 SUBJECTS</h1>
             <table id="STEMtable">
               <tr>
@@ -53,19 +53,15 @@ const Abm = () => {
                 <td>Practical Research 1</td>
               </tr>
               <tr>
-                <td>Business Mathematics</td>
-                <td>Principles of Marketing</td>
+                <td>Cookery 1</td>
+                <td>Food and Beverages Services 1</td>
               </tr>
               <tr>
-                <td>Organization and Management</td>
-                <td>Fundamentals of Accountancy, Business, and Management 1</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Filipino sa Piling Larang</td>
+                <td>Cookery 2</td>
+                <td>Food and Beverages Services 2</td>
               </tr>
             </table>
-          <h1 id='stemSub'>GRADE 12 SUBJECTS</h1>
+            <h1 id='stemSub'>GRADE 12 SUBJECTS</h1>
             <table id="STEMtable">
               <tr>
                 <th>1st Semester</th>
@@ -92,12 +88,8 @@ const Abm = () => {
                 <td>Empowerment Technologies</td>
               </tr>
               <tr>
-                <td>Fundamentals of Accountancy, Business, and Management 2</td>
-                <td>Business Ethics and Social Responsibility</td>
-              </tr>
-              <tr>
-                <td>Business Finance</td>
-                <td>Applied Economics</td>
+                <td>Bread and Pastry Production 1</td>
+                <td>Bread and Pastry Production 2</td>
               </tr>
               <tr>
                 <td></td>
@@ -106,12 +98,12 @@ const Abm = () => {
             </table>
           <div className="enrollbuttonsec">
           <Link to="/enrollment" id="enrolllink">
-            <b id="lezgoEnroll" className="track-enroll">ENROLL NOW!</b>
-          </Link>
+                  <b id="lezgoEnroll" className="track-enroll">ENROLL NOW!</b>
+                </Link>
           </div>
         </div>
       </body>
     )
   }
   
-  export default Abm
+  export default TVL

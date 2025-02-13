@@ -46,7 +46,6 @@
     line-height: 40px;
     text-align: justify;
     position: relative;
-
 }
 
 #cPath{
@@ -60,7 +59,7 @@
     width: 350px;
     height: 200px;
     display: flex;
-    padding: 0px 50px 0px 0px;
+    padding: 0px 50px 50px 0px;
     object-fit: contain;
 }
 
@@ -98,12 +97,12 @@
 }
 
 .humssRequirements{
-    background-image: url('../../public/bg7.png');
+    background-image: url('../../public/stripes.png');
     background-position: left;
     background-size: 1500px;
-    background-position-y: 100%;
+    /* background-position-y: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .stemRequireRow{
@@ -133,6 +132,13 @@
     background-position: top;
     background-size: 900px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.tvlSubjects{
+    background-image: url('../../public/tvlBG.png');
     display: flex;
     flex-direction: column;
     color: black;
@@ -173,3 +179,8 @@ th{
     padding: 10px;
 }
 
+.tvlBG{
+    background-image: url('../../public/tvlBG.png');
+    display: flex;
+    flex-direction: column;
+}

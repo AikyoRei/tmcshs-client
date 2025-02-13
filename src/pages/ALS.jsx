@@ -21,7 +21,7 @@ const ALS = () => {
             </tr>
           </table>
         </div>
-        <div className="humssRequirements">
+        <div className="alsRequirements">
           <b id='stemRequireHead'>REQUIREMENTS</b>
           <div className="stemRequireRow">
             <a>1. AF5 - Permanent Record (Original)</a>

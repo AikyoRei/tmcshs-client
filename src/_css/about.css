@@ -1,3 +1,31 @@
-#stemlogoheehee{
-    width: 50px;
+#visionmission{
+    padding: 50px 100px 50px 100px;
+}
+
+#vmhead1{
+    border: 0pt;
+    background-color: white;
+    color: darkred;
+}
+
+#vmhead2{
+    border: 0pt;
+    background-color: white;
+    color: #FFA500;
+}
+
+#vmcolumn{
+    border: 0pt;
+    background-color: white;
+    line-height: 0.415in;
+    font-size: large;
+    text-indent: 0.5in;
+    text-align: justify;
+    padding: 0px 50px 0px 50px;
+}
+
+#history{
+    display: flex;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

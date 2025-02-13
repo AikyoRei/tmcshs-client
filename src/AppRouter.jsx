@@ -3,8 +3,7 @@ import Enroll from './about/enrollment';
 import Abm from './academic/abm';
 import Humss from './academic/humss';
 import Stem from './academic/stem';
-import Bread from './tvl/bread';
-import Care from './tvl/caregiving';
+import TVL from './pages/TVL';
 import './App.css'
 import './_css/pages.css'
 import './_css/strands.css'
@@ -47,8 +46,7 @@ function AppRouter() {
               <Route path="/abm" element={<Abm />} />
               <Route path="/humss" element={<Humss />} />
               <Route path="/stem" element={<Stem />} />
-              <Route path="/bread" element={<Bread />} />
-              <Route path="/care" element={<Care />} />
+              <Route path="/tvl" element={<TVL />} />
               <Route path="/register" element={<Register />} />
               {
                 isTokenValid && isStaff &&
