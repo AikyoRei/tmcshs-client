@@ -59,18 +59,21 @@ function NavBar() {
             </>
           }
           {
-            isStaff ? 
+            isTokenValid && isStaff &&
               <Link id='headbarlink' to={"/students"}>
                 <b id='loginpo' className='track-row'>Manage Students</b>
               </Link>
-              : <>
-                <Link id='headbarlink' to={isTokenValid? "enrollment-process" : "/enrollment"}>
-                  <b id='loginpo' className='track-row'>Enroll</b>
-                </Link>
-                <Link id='headbarlink' to={`/students/${userId}`}>
-                  <b id='loginpo' className='track-row'>Profile</b>
-                </Link>
-              </>
+          }
+          {            
+            isTokenValid && !isStaff &&
+            <>
+              <Link id='headbarlink' to={isTokenValid? "enrollment-process" : "/enrollment"}>
+                <b id='loginpo' className='track-row'>Enroll</b>
+              </Link>
+              <Link id='headbarlink' to={`/students/${userId}`}>
+                <b id='loginpo' className='track-row'>Profile</b>
+              </Link>
+            </>
           }
         </div>
       </div>
