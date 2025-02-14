@@ -12,8 +12,8 @@ const TVL = () => {
             <a>The Technical, Vocational, and Livelihood Track offers specialized training and skills development tailored to various industries and professions. Students engage in hands-on learning experiences, acquiring practical skills and knowledge directly applicable to specific trades or vacations. This track equips students with the competencies needed to pursue employment opportunities immediately after graduation or to further their education through technical courses or apprenticeships.</a>
           </div>
         <div className="stemCpath">
-            <img id='cPath' src="Cpath.png" alt="Career Paths"/>
-            <img id='cPathText' src="CpathText.png" alt="Career Paths Examples"/>
+            <img id='cPath2' src="Cpath.png" alt="Career Paths"/>
+            <img id='cPathText2' src="TVLcPath.png" alt="Career Paths Examples"/>
         </div>
         </div>
 

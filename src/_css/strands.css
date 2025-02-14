@@ -55,9 +55,24 @@
     object-fit: contain;
 }
 
+#cPath2{
+    width: 450px;
+    height: 250px;
+    display: flex;
+    object-fit: contain;
+}
+
 #cPathText{
     width: 350px;
     height: 200px;
+    display: flex;
+    padding: 0px 50px 50px 0px;
+    object-fit: contain;
+}
+
+#cPathText2{
+    width: 400px;
+    height: 250px;
     display: flex;
     padding: 0px 50px 50px 0px;
     object-fit: contain;
