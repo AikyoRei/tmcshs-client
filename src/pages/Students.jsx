@@ -144,7 +144,7 @@ const StudentsPage = () => {
       )}
 
       {visibleTables.unenrolledStudents && (
-        <Table title="Unenrolled Students" students={filteredStudents.filter(s => !s.is_enrolled && s.stepsTaken === 0)}>
+        <Table title="Unenrolled Students" students={filteredStudents.filter(s => !s.is_enrolled)}>
           {(student) => <button onClick={() => handleDelete(student.user)}>Delete</button>}
         </Table>
       )}
