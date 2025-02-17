@@ -125,6 +125,12 @@
     font-size: larger;
 }
 
+.choiceSF{
+    color: white;
+    font-size: medium;
+    text-decoration: none;
+}
+
 #td2{
     border: 0pt;
     background-color: black;
@@ -146,6 +152,146 @@
     font-size: x-large;
 }
 
+.track-SF:hover {
+    color: darkgoldenrod;
+    font-size: large;
+}
+
 #introchild{
     padding: 0px 0px 20px 0px;
+}
+
+.SFbg{
+    background-image: url('../../public/bg8.jpg');
+    display: flex;
+    flex-direction: column;
+}
+
+.SF{
+    background-image: url('../../public/bg8.jpg');
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    padding: 50px;
+}
+
+#SFhead1{
+    color: darkred;
+}
+
+#SFhead2{
+    color: #FFA500;
+}
+
+.SFchoices{
+    padding: 0px 100px 50px 100px;
+}
+
+#tdSF{
+    border: 0pt;
+    background-color: darkred;
+    margin: 0px;
+    padding: 20px;
+}
+
+.comlabRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tvlRow{
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+}
+
+#comlabDesc{
+    display: flex;
+    padding: 20px 0px 50px 150px;
+    text-indent: 0.5in;
+    line-height: 0.45in;
+    text-align: justify;
+}
+
+#scilabDesc{
+    display: flex;
+    padding: 20px 150px 50px 0px;
+    text-indent: 0.5in;
+    line-height: 0.45in;
+    text-align: justify;
+    color: white;
+}
+
+#tvlDesc{
+    display: flex;
+    padding: 0px 150px;
+    text-indent: 0.5in;
+    line-height: 0.45in;
+    text-align: justify;
+}
+
+#tvlDesc2{
+    display: flex;
+    padding: 0px 150px 0px 50px;
+    text-indent: 0.5in;
+    line-height: 0.45in;
+    text-align: justify;
+}
+
+#comlabPic{
+    width: 450px;
+    display: flex;
+    padding: 50px 150px 50px 100px;
+}
+
+.scilabBG{
+    background-color: darkred;
+    display: flex;
+    flex-direction: row;
+}
+
+#comlab{
+    padding: 0px 150px;
+}
+
+#TVLroom{
+    padding: 50px 50px 0px 150px;
+}
+
+#TVLroom2{
+    padding: 50px 150px 10px 50px;
+}
+
+#scilab{
+    padding: 50px 150px 0px 0px;
+    color: white;
+}
+
+#scilabPic{
+    width: 450px;
+    display: flex;
+    padding: 50px 150px;
+}
+
+.tvlPics{
+    display: flex;
+    align-items: center;
+}
+
+
+#tvlPic{
+    width: 400px;
+    padding: 20px 150px 50px 150px;
+}
+
+#tvlPic2{
+    width: 400px;
+    padding: 20px 150px 50px 50px;
+}
+.tvlColumn{
+    background-image: url('../../public/bg8.jpg');
+    display: flex;
+    flex-direction: column;
 }

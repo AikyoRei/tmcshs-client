@@ -85,7 +85,7 @@ const EnrollmentProcess = () => {
         <h2 className="enrollment-process__title">Step {stepNumber}: {steps[stepNumber - 1]?.title}</h2>
 
         {/* Show different content per step */}
-        {stepNumber === 1 && <p>Please fill out the enrollment form.</p>}
+        {stepNumber === 1 && <p>Please fill out the <a href="https://forms.google.com">Enrollment Form</a>.</p>}
         {stepNumber === 2 && <p>Status: Waiting for admin approval.</p>}
         {stepNumber === 3 && <p>Take the online reading test.</p>}
         {stepNumber === 4 && <p>Status: Waiting for admin approval.</p>}

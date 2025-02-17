@@ -7,8 +7,8 @@ const TMCSHS = () => {
             <td id="vmhead2"><h1>MISSION</h1></td>
           </tr>
           <tr>
-            <td id="vmcolumn">The vision is Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aperiam repellat accusamus voluptatum nisi animi quia quas culpa dolores, blanditiis, ipsum dolorem debitis! Commodi provident nostrum officiis aliquam dolorum deserunt!</td>
-            <td id="vmcolumn"> The mission is Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia porro corporis totam enim quidem recusandae ex, ut explicabo laudantium aperiam odio consequuntur. Quo culpa laboriosam saepe nisi, perspiciatis tempore aliquid!</td>
+            <td id="vmcolumn">A school that trains, equips, and prepares students for life; a school that produces quality products.</td>
+            <td id="vmcolumn">To produce graduates with knowledge, sills, and attitude needed to become globally competitive and socially responsible persons.</td>
           </tr>
         </table>
         <h1 id="history"></h1>

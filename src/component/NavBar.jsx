@@ -111,7 +111,7 @@ function NavBar() {
         </Link>
 
         <Link id='navbarlink' to={"/faculty"}>
-            <b className='nav-button track-row'>FACULTY AND STAFF</b>
+            <b className='nav-button track-row'>SCHOOL FACILITIES</b>
         </Link>
       </div>
 
