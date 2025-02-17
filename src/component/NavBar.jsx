@@ -6,23 +6,15 @@ import { AuthContext } from '../AuthProvider'
 function NavBar() {
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isAcadOpen, setIsAcadOpen] = useState(false)
-  const [isTVLOpen, setIsTVLOpen] = useState(false)
 
   const openAbout = () => {
     setIsAboutOpen(!isAboutOpen)
     setIsAcadOpen(false)
-    setIsTVLOpen(false)
   }
+
   const openAcad = () => {
     setIsAcadOpen(!isAcadOpen)
     setIsAboutOpen(false)
-    setIsTVLOpen(false)
-  }
-
-  const openTVL = () => {
-    setIsTVLOpen(!isTVLOpen)
-    setIsAboutOpen(false)
-    setIsAcadOpen(false)
   }
   
   const { isTokenValid, setIsTokenValid, isStaff, userId } = useContext(AuthContext);
@@ -94,6 +86,7 @@ function NavBar() {
             </Link>
           </div>
         </b>
+
         <b style={{ position: 'relative' }}>
           <div className='nav-button track-row'  onClick={openAcad}>ACADEMIC TRACK</div>
           <div className='dropdown' style={{ display: isAcadOpen ? 'flex' : 'none'}}>
@@ -108,20 +101,15 @@ function NavBar() {
           </Link>
           </div>
         </b>
-        <b style={{ position: 'relative' }}>
-          <div className='nav-button track-row'  onClick={openTVL}>TVL TRACK</div>
-          <div className='dropdown' style={{ display: isTVLOpen ? 'flex' : 'none'}}>
-          <Link id='dd-link' to={"/bread"}>
-            <b className='dd-button track-row'>Bread & Pastry</b>
-          </Link>
-          <Link id='dd-link' to={"/care"}>
-            <b className='dd-button track-row'>Caregiving & Wellness</b>
-          </Link>
-            </div>
-          </b>
+
+        <Link id='navbarlink' to={"/tvl"}>
+          <b className='nav-button track-row'>TVL TRACK</b>
+        </Link>
+
         <Link id='navbarlink' to={"/als"}>
           <b className='nav-button track-row'>ALS</b>
         </Link>
+
         <Link id='navbarlink' to={"/faculty"}>
             <b className='nav-button track-row'>FACULTY AND STAFF</b>
         </Link>

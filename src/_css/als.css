@@ -26,3 +26,12 @@
     align-items: center;
     padding: 100px;
 }
+
+.alsRequirements{
+    background-image: url('../../public/bg7.png');
+    background-position: left;
+    background-size: 1500px;
+    background-position-y: 100%;
+    display: flex;
+    flex-direction: column;
+}

@@ -35,7 +35,7 @@ const Home = () => {
       </div>
       <div className="introduction">
           <div id="introLink">
-            <b>TMCSHS is a stand-alone senior high school chu chu Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis molestiae, laboriosam optio deserunt cum esse dolorum accusantium commodi! Modi id amet dolores, veritatis fugiat esse aliquam nesciunt corrupti reprehenderit impedit.</b>
+            <b>Trece Martires City Senior High School (TMCSHS) is the only public stand-alone educational institution that provides senior high school education in Trece Martires City. It aspires its students to uphold excellence, relevance, and service in fostering their education.</b>
             <Link id="introToAboutMe" to="/tmcshs">
               <b className="track-row">- Learn More -</b>
             </Link>
@@ -47,10 +47,10 @@ const Home = () => {
           <img id='sphoto' src="strandslogo.png" alt="Strands Logo"/>
           <div className="strands2">
           <h2 id="strand">TRACK & STRANDS</h2>
-          <b>Our school offers a quality education from:</b>
-          <div className="columns">
-            <div className="rows">
-              <b id="tracks">Academic Track</b>
+          <b id="introchild">Our school offers a quality education from:</b>
+          <div className="rows">
+            <div className="columns">
+              <b id="tracks1">Academic Track</b>
               <div className="rows">
                 <Link id="strandlink" to="/stem">
                     <b className="track-row">STEM</b>
@@ -63,16 +63,15 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="rows">
-              <b id="tracks">TVL Track</b>
-              <div className="rows">
-                <Link id="strandlink" to="/bread">
-                  <b className="track-row">Bread & Pastry</b>
-                </Link>
-                <Link id="strandlink" to="/care">
-                  <b className="track-row">Caregiving & Wellness</b>
-                </Link>
-              </div>
+            <div className="columns2">
+              <Link id="strandlink" to="/tvl">
+              <b id="tracks" className="track-row">Technical, Vocational, and Livelihood Track</b>
+              </Link>
+            </div>
+            <div className="columns2">
+              <Link id="strandlink" to="/als">
+              <b id="tracks" className="track-row">Alternative Learning System</b> 
+              </Link>
             </div>
           </div>
           </div>

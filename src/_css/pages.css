@@ -69,8 +69,18 @@
 .columns{
     display: flex;
     flex-direction: row;
-    gap: 75px;
+    gap: 50px;
+    text-indent: 50px;
 }
+
+.columns2{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    text-indent: 50px;
+    padding: 10px 0px;
+}
+
 
 .rows{
     display: flex;
@@ -80,7 +90,12 @@
 
 #tracks{
     font-size: x-large;
-    padding: 10px 50px;
+    padding: 0px 50px;
+}
+
+#tracks1{
+    font-size: x-large;
+    padding: 0px 50px;
 }
 
 .home{
@@ -131,3 +146,6 @@
     font-size: x-large;
 }
 
+#introchild{
+    padding: 0px 0px 20px 0px;
+}
