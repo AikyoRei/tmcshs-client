@@ -240,6 +240,14 @@
     text-align: justify;
 }
 
+#courtDesc{
+    display: flex;
+    padding: 20px 0px 50px 150px;
+    text-indent: 0.5in;
+    line-height: 0.45in;
+    text-align: justify;
+}
+
 #comlabPic{
     width: 450px;
     display: flex;
@@ -252,8 +260,23 @@
     flex-direction: row;
 }
 
+.courtBG{
+    background-image: url('../../public/bg8.jpg');
+    display: flex;
+    flex-direction: row;
+}
+
 #comlab{
     padding: 0px 150px;
+}
+
+#library{
+    padding: 90px 150px 0px 0px;
+    color: white;
+}
+
+#court{
+    padding: 50px 150px 0px 150px;
 }
 
 #TVLroom{

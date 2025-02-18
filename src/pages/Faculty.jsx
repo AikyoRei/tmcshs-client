@@ -75,38 +75,38 @@ const Faculty = () => {
       </div>
       <div className="scilabBG">
         <div>
-          <img id="scilabPic" src="SCILABframe.png" alt="SciLab"/>
+          <img id="scilabPic" src="LIBRARY.png" alt="Library"/>
         </div>
         <div className="scilabColumn">
           <h2 id="library">LIBRARY</h2>
           <a id="scilabDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
         </div>
       </div>
-      <div className="scilabBG">
-        <div>
-          <img id="scilabPic" src="SCILABframe.png" alt="SciLab"/>
-        </div>
+      <div className="courtBG">
         <div className="scilabColumn">
           <h2 id="court">COVERED COURT</h2>
-          <a id="scilabDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+          <a id="courtDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+        </div>
+        <div>
+          <img id="scilabPic" src="COURTred.png" alt="Court"/>
         </div>
       </div>
       <div className="scilabBG">
         <div>
-          <img id="scilabPic" src="SCILABframe.png" alt="SciLab"/>
+          <img id="scilabPic" src="CANTEEN.png" alt="Canteen"/>
         </div>
         <div className="scilabColumn">
-          <h2 id="canteen">CANTEEN</h2>
+          <h2 id="library">CANTEEN</h2>
           <a id="scilabDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
         </div>
       </div>
-      <div className="scilabBG">
-        <div>
-          <img id="scilabPic" src="SCILABframe.png" alt="SciLab"/>
-        </div>
+      <div className="courtBG">
         <div className="scilabColumn">
-          <h2 id="clinic">CLINIC</h2>
-          <a id="scilabDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+          <h2 id="court">CLINIC</h2>
+          <a id="courtDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+        </div>
+        <div>
+          <img id="scilabPic" src="CLINICred.png" alt="Clinic"/>
         </div>
       </div>
     </body>
