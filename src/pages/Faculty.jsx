@@ -40,7 +40,7 @@ const Faculty = () => {
         <div className="comlabRow">
           <div className="comlabColumn">
             <h2 id="comlab">COMPUTER LABORATORY</h2>
-            <a id="comlabDesc">It is located at the 2nd Floor of Kaalaman building. For subjects that needs hands-on software activities such as Empowerment Technologies and Media and Information Literacy, students use this computer laboratory.</a>
+            <a id="comlabDesc">It is located at the 2nd Floor of Kaalaman building. For subjects that needs hands-on software activities such as Empowerment Technologies and Media and Information Literacy, students use this computer laboratory. Tablets provided by DepEd are also available for those who are in need of a gadget for studies.</a>
           </div>
           <img id="comlabPic" src="COMLABframe.png" alt="ComLab"/>
         </div>
@@ -51,19 +51,18 @@ const Faculty = () => {
         </div>
         <div className="scilabColumn">
           <h2 id="scilab">SCIENCE LABORATORY</h2>
-          <a id="scilabDesc">It is located at the 1st Floor of Pag-ibig building. For science subjects that needs hands-on experimental activities, students use this science laboratory.</a>
+          <a id="scilabDesc">It is located at the 1st Floor of Pag-ibig building. For science subjects that needs hands-on experimental activities, students use this science laboratory. Laboratoy equipments are also available such as microscopes, flasks, etc.</a>
         </div>
       </div>
       <div className="tvlColumn">
         <div className="tvlRow">
           <div className="comlabColumn">
             <h2 id="TVLroom">BREAD & PASTRY ROOM</h2>
-            <a id="tvlDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ea molestiae voluptate aliquid totam iure autem distinctio expedita rerum! Maiores aspernatur iusto aliquam qui nobis laborum provident minus eos voluptas!</a>
+            <a id="tvlDesc">For TVL students who has Cookery, Food and Beverages Services, and Bread and Pastry Production subjects, this room is provided to learn and hone their skills through an actual kitchen setting.</a>
           </div>
           <div className="comlabColumn">
             <h2 id="TVLroom2">CAREGIVING ROOM</h2>
-            <a id="tvlDesc2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita earum in nihil culpa perferendis voluptatem natus corrupti, magni facere sed magnam nemo eos quae quisquam dolor quia, labore aperiam.
-            </a>
+            <a id="tvlDesc2">This area is provided for TVL students who are studying for Home Economics. Caregiving, a specialized subject in TVL Track, is also included for ALS who will choose this track.</a>
           </div>
         </div>
         <div>
@@ -79,13 +78,13 @@ const Faculty = () => {
         </div>
         <div className="scilabColumn">
           <h2 id="library">LIBRARY</h2>
-          <a id="scilabDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+          <a id="scilabDesc">It is located at the 1st Floor of Katarungan building. Students are allowed to stay and borrow books here in the library. Even for their research, existing studies are available as their reliable source of information.</a>
         </div>
       </div>
       <div className="courtBG">
         <div className="scilabColumn">
           <h2 id="court">COVERED COURT</h2>
-          <a id="courtDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+          <a id="courtDesc">Rain or Shine, games will still continue. TMCSHS has its court covered in order for the students to use whenever they want. Basketball rings and volleyball net are available as this school proudly presents the sports team who uses this court for trainings.</a>
         </div>
         <div>
           <img id="scilabPic" src="COURTred.png" alt="Court"/>
@@ -96,14 +95,14 @@ const Faculty = () => {
           <img id="scilabPic" src="CANTEEN.png" alt="Canteen"/>
         </div>
         <div className="scilabColumn">
-          <h2 id="library">CANTEEN</h2>
-          <a id="scilabDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+          <h2 id="canteen">CANTEEN</h2>
+          <a id="scilabDesc">Healthy yet delicious food and drinks are available here at the canteen. It also offers snacks in an affordable price for their customers.</a>
         </div>
       </div>
       <div className="courtBG">
         <div className="scilabColumn">
-          <h2 id="court">CLINIC</h2>
-          <a id="courtDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel esse soluta excepturi ut, nihil nisi reiciendis voluptatem itaque dicta expedita deserunt repudiandae explicabo dolorem a, vitae cum. Culpa, quas ipsum?</a>
+          <h2 id="clinic">CLINIC</h2>
+          <a id="courtDesc">In case of emergency, students are brought to the clinic. Whenever they feel sick or need medicine, this place, together with the medicines and equipments, is available for them. Aside from that, it is also the location for medical examination of students.</a>
         </div>
         <div>
           <img id="scilabPic" src="CLINICred.png" alt="Clinic"/>

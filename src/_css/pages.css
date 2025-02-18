@@ -204,7 +204,6 @@
 .tvlRow{
     display: flex;
     flex-direction: row;
-    align-items: top;
 }
 
 #comlabDesc{
@@ -226,7 +225,7 @@
 
 #tvlDesc{
     display: flex;
-    padding: 0px 150px;
+    padding: 0px 50px 0px 150px;
     text-indent: 0.5in;
     line-height: 0.45in;
     text-align: justify;
@@ -234,7 +233,7 @@
 
 #tvlDesc2{
     display: flex;
-    padding: 0px 150px 0px 50px;
+    padding: 0px 160px 0px 50px;
     text-indent: 0.5in;
     line-height: 0.45in;
     text-align: justify;
@@ -275,7 +274,16 @@
     color: white;
 }
 
+#canteen{
+    padding: 90px 150px 0px 0px;
+    color: white;
+}
+
 #court{
+    padding: 50px 150px 0px 150px;
+}
+
+#clinic{
     padding: 50px 150px 0px 150px;
 }
 
