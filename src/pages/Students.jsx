@@ -16,6 +16,7 @@ const StudentsPage = () => {
     unenrolledStudents: true,
   });
   const [searchQuery, setSearchQuery] = useState('');
+  const [modal, setModal] = useState(null); // Store selected student for enrollment
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -46,6 +47,24 @@ const StudentsPage = () => {
     } catch {
       console.error("Failed to save changes.");
     }
+  };
+
+  const handleEnrollClick = (student) => {
+    setModal({ ...student, academic_year: '', student_number: '', grade_level: '' });
+  };
+
+  const handleEnrollSubmit = () => {
+    if (!modal.student_number || !modal.academic_year || !modal.grade_level) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    handleSave(modal.user, {
+      ...modal,
+      student_number: parseInt(modal.student_number),
+      stepsTaken: 6,
+      is_enrolled: true,
+    });
+    setModal(null);
   };
 
   const handleDelete = async (userId) => {
@@ -110,7 +129,7 @@ const StudentsPage = () => {
         <Table title="Final Requirements Submission" students={filteredStudents.filter(s => s.stepsTaken === 5)}>
           {(student) => (
             <>
-              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 6, is_enrolled: true })}>Enroll</button>
+              <button onClick={() => handleEnrollClick(student)}>Enroll</button>
               <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 4, is_enrolled: false })}>Decline</button>
             </>
           )}
@@ -148,6 +167,26 @@ const StudentsPage = () => {
           {(student) => <button onClick={() => handleDelete(student.user)}>Delete</button>}
         </Table>
       )}
+
+      {/* Enrollment Modal */}
+      {modal && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Enroll Student</h2>
+            <label>Student Number/LRN</label>
+            <input type="text" value={modal.student_number} onChange={(e) => setModal({ ...modal, student_number: e.target.value })} />
+
+            <label>Academic Year</label>
+            <input type="text" value={modal.academic_year} onChange={(e) => setModal({ ...modal, academic_year: e.target.value })} />
+
+            <label>Grade Level</label>
+            <input type="text" value={modal.grade_level} onChange={(e) => setModal({ ...modal, grade_level: e.target.value })} />
+
+            <button onClick={handleEnrollSubmit}>Confirm</button>
+            <button onClick={() => setModal(null)}>Cancel</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -158,7 +197,7 @@ const Table = ({ title, students, children }) => (
     <table className="students-table">
       <thead>
         <tr>
-          <th>Student Number</th>
+          <th>Student Number/LRN</th>
           <th>Name</th>
           <th>Grade Level</th>
           <th>Contact</th>
@@ -167,28 +206,21 @@ const Table = ({ title, students, children }) => (
         </tr>
       </thead>
       <tbody>
-        {students.length > 0 ? (
-          students.map((student) => (
-            <tr key={student.id}>
-              <td>{student.student_number}</td>
-              <td>{`${student.first_name} ${student.middle_name || ''} ${student.last_name}`}</td>
-              <td>{student.grade_level}</td>
-              <td>{student.contact_number}</td>
-              <td>{student.email}</td>
-              
-                <td>
-                  <Link to={`/students/${student.user}`}>
-                    <button>Show Profile</button>
-                  </Link>
-                  {children && children(student)}
-                </td>
-            </tr>
-          ))
-        ) : (
-          <tr>
-            <td colSpan={6}>No students found</td>
+        {students.length > 0 ? students.map((student) => (
+          <tr key={student.id}>
+            <td>{student.student_number}</td>
+            <td>{`${student.first_name} ${student.middle_name || ''} ${student.last_name}`}</td>
+            <td>{student.grade_level}</td>
+            <td>{student.contact_number}</td>
+            <td>{student.email}</td>
+            <td>
+              <Link to={`/students/${student.user}`}>
+                <button>Show Profile</button>
+              </Link>
+              {children && children(student)}
+            </td>
           </tr>
-        )}
+        )) : <tr><td colSpan={6}>No students found</td></tr>}
       </tbody>
     </table>
   </div>
