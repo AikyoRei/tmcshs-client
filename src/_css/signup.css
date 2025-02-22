@@ -37,12 +37,12 @@
 }
 
 .form-input:focus {
-    border-color: #0066cc;
+    border-color: darkred;
     outline: none;
 }
 
 .submit-btn {
-    background-color: #0066cc;
+    background-color: darkred;
     color: white;
     padding: 12px;
     font-size: 16px;
@@ -52,7 +52,7 @@
 }
 
 .submit-btn:hover {
-    background-color: #005bb5;
+    background-color: rgb(190, 0, 0);
 }
 
 .login-link {

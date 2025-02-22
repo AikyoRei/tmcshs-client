@@ -22,6 +22,8 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [profilePicName, setProfilePicName] = useState('')
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const onDrop = async (acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -66,6 +68,7 @@ const Signup = () => {
       alert('Passwords do not match');
       return;
     }
+    setIsLoading(true); // Start loading
 
     const data = { ...formData };
     delete data.confirmPassword; // Remove confirmPassword before sending
@@ -109,6 +112,8 @@ const Signup = () => {
       console.error(error);
       setError('An error occurred. Please try again later.');
       setSuccess('');
+    } finally {
+      setIsLoading(false); // Stop loading
     }
   };
 
@@ -295,7 +300,15 @@ const Signup = () => {
         </div>
 
         {/* Submit Button */}
-        <button type="submit" className="submit-btn">Sign Up</button>
+        <button type="submit" className="submit-btn" disabled={isLoading}>
+          {isLoading ? (
+            <>
+              <span className="spinner"></span> Signing up...
+            </>
+          ) : (
+            'Sign Up'
+          )}
+        </button>
       </form>
 
       <div className="login-link">

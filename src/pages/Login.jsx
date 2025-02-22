@@ -7,6 +7,7 @@ const Login = () => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +25,7 @@ const Login = () => {
       password: formData.password,
     };
 
+    setIsLoading(true); // Start loading
     try {
       const response = await fetch('https://tmcshs-server.vercel.app/api/login/', {
         method: 'POST',
@@ -34,7 +36,8 @@ const Login = () => {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      const result = await response.json()
+
 
       if (response.ok) {
         setSuccess('Login successful!');
@@ -59,6 +62,8 @@ const Login = () => {
       console.log(error);
       setError('An error occurred. Please try again later.');
       setSuccess('');
+    } finally {
+      setIsLoading(false); // Stop loading
     }
   };
 
@@ -99,8 +104,14 @@ const Login = () => {
           />
         </div>
 
-        <button type="submit" className="submit-btn">
-          Login
+        <button type="submit" className="submit-btn" disabled={isLoading}>
+        {isLoading ? (
+            <>
+              <span className="spinner"></span> Logging in...
+            </>
+          ) : (
+            'Login'
+          )}
         </button>
       </form>
 
