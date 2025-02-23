@@ -4,6 +4,7 @@
 
 .students-table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     color: black
   }
@@ -13,6 +14,7 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    word-break: break-all;
   }
 
   

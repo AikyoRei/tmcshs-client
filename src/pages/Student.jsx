@@ -9,7 +9,7 @@ const StudentPage = () => {
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({});
   const [error, setError] = useState('');
-  const { token } = useContext(AuthContext);
+  const { token, isStaff } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchStudent = async () => {
@@ -35,7 +35,7 @@ const StudentPage = () => {
       await axios.put(`https://tmcshs-server.vercel.app/api/students/${userId}/`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setStudent(formData);
+      setStudent({...formData, student_number: parseInt(formData.student_number), academic_year: parseInt(formData.academic_year), grade_level: parseInt(formData.grade_level)});
       setEditMode(false);
     } catch {
       setError('Failed to update student data. Please try again.');
@@ -62,8 +62,42 @@ const StudentPage = () => {
           )}
 
           <div className="student-details">
+            <label>Student Number/LRN:</label>
+            {editMode && isStaff ? (
+              <input type="text" name="student_number" value={formData.student_number || ''} onChange={handleChange} className="edit-input" />
+            ) : (
+              <p>{student.student_number}</p>
+            )}
+            
+            <label>Academic Year:</label>
+            {editMode && isStaff ? (
+              <input type="text" name="academic_year" value={formData.academic_year || ''} onChange={handleChange} className="edit-input" />
+            ) : (
+              <p>{student.academic_year}</p>
+            )}
+            
+            <label>Strand:</label>
+            {editMode && isStaff ? (
+              <input type="text" name="strand" value={formData.strand || ''} onChange={handleChange} className="edit-input" />
+            ) : (
+              <p>{student.strand}</p>
+            )}
+            
+            <label>Grade Level:</label>
+            {editMode && isStaff ? (
+              <input type="text" name="grade_level" value={formData.grade_level || ''} onChange={handleChange} className="edit-input" />
+            ) : (
+              <p>{student.grade_level}</p>
+            )}
+            
+            <label>Section:</label>
+            {editMode && isStaff ? (
+              <input type="text" name="section" value={formData.section || ''} onChange={handleChange} className="edit-input" />
+            ) : (
+              <p>{student.section}</p>
+            )}
             <label>Email:</label>
-            {editMode ? (
+            {editMode && isStaff ? (
               <input type="email" name="email" value={formData.email} onChange={handleChange} className="edit-input" />
             ) : (
               <p>{student.email}</p>
@@ -103,6 +137,7 @@ const StudentPage = () => {
             ) : (
               <p>{student.guardian_contact}</p>
             )}
+
           </div>
 
           <div className="button-container">
