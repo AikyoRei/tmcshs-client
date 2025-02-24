@@ -160,13 +160,26 @@ const StudentsPage = () => {
             return acc;
           }, {})
         ).map(([section, students]) => (
-          <Table key={section} title={`Enrolled Students - ${section||'Unassigned'}`} students={students} />
+          <>
+            <Table key={section} title={`Enrolled Students - ${section||'Unassigned'}`} students={students} 
+              sideButton={<button onClick={() => students.map(student => handleSave(student.user, { ...student, stepsTaken: 0, is_enrolled: false }))} style={{ padding: '7px', marginRight: '20px', backgroundColor: 'darkred', color: 'white', borderRadius: '5px' }}>Unenroll All Students</button>}
+            >
+                {(student) => <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 0, is_enrolled: false })}>Unenroll</button>}
+            </Table>
+          </>
         ))
       )}
 
       {(visibleTable === 'all' || visibleTable === 'unenrolledStudents') && (
         <Table title="Unenrolled Students" students={filteredStudents.filter(s => !s.is_enrolled)}>
-          {(student) => <button onClick={() => handleDelete(student.user)}>Delete</button>}
+          {(student) => <>
+            {
+              student.student_number 
+              ? <button onClick={() => handleEnrollClick(student)}>Enroll Now</button>
+              : <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 6, is_enrolled: true })}>Enroll Now</button>
+            }
+            <button onClick={() => handleDelete(student.user)}>Delete</button>
+          </>}
         </Table>
       )}
 
@@ -198,9 +211,12 @@ const StudentsPage = () => {
   );
 };
 
-const Table = ({ title, students, children }) => (
-  <div>
-    <h2>{title}</h2>
+const Table = ({ title, students, sideButton, children }) => (
+  <div style={{ paddingBottom: '42px'}}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <h2>{title}</h2>
+      {sideButton}
+    </div>
     <table className="students-table">
       <thead>
         <tr>
@@ -227,13 +243,17 @@ const Table = ({ title, students, children }) => (
             <td>{student.email}</td>
             <td style={{ wordBreak: 'break-word'}}>{stepStatusMap[student.stepsTaken] || "Unknown"}</td>
             <td>
-              <Link to={`/students/${student.user}`}>
-                <button>Show Profile</button>
-              </Link>
-              {children && children(student)}
+              <div style ={{ display: 'flex', flexDirection: 'column'}}>
+                <button>
+                  <Link to={`/students/${student.user}`} style={{ textDecoration: 'none', color: 'black'}}>
+                    Show Profile
+                  </Link>
+                </button>
+                {children && children(student)}
+              </div>
             </td>
           </tr>
-        )) : <tr><td colSpan={8}>No students found</td></tr>}
+        )) : <tr><td colSpan={9}>No students found</td></tr>}
       </tbody>
     </table>
   </div>
@@ -242,6 +262,7 @@ const Table = ({ title, students, children }) => (
 Table.propTypes = {
   title: PropTypes.string.isRequired,
   students: PropTypes.array.isRequired,
+  sideButton: PropTypes.element,
   children: PropTypes.func
 };
 
