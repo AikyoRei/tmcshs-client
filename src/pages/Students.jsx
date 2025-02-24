@@ -131,23 +131,27 @@ const StudentsPage = () => {
       )}
 
       {(visibleTable === 'all' || visibleTable === 'readingAssessment') && (
-        <Table title="Reading Assessment Completion" students={filteredStudents.filter(s => s.stepsTaken === 3)}>
+        <Table title="Reading Assessment Completion" students={filteredStudents.filter(s => s.stepsTaken === 3 || s.stepsTaken === 4).sort((a, b) => a.stepsTaken - b.stepsTaken)}>
           {(student) => (
-            <>
-              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 4 })}>Accept</button>
-              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 2 })}>Decline</button>
-            </>
+              student.stepsTaken === 3 ?
+              <>
+                <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 4 })}>Accept</button>
+                <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 2 })}>Decline</button>
+              </> :
+              <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 3 })}>Cancel</button>
           )}
         </Table>
       )}
 
       {(visibleTable === 'all' || visibleTable === 'enrollmentForms') && (
-        <Table title="Enrollment Form Submissions" students={filteredStudents.filter(s => s.stepsTaken === 1)}>
+        <Table title="Enrollment Form Submissions" students={filteredStudents.filter(s => s.stepsTaken === 1 || s.stepsTaken === 2).sort((a, b) => a.stepsTaken - b.stepsTaken)}>
           {(student) => (
+            student.stepsTaken === 1 ?
             <>
               <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 2 })}>Accept</button>
               <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 0 })}>Decline</button>
-            </>
+            </>:
+            <button onClick={() => handleSave(student.user, { ...student, stepsTaken: 1 })}>Cancel</button>
           )}
         </Table>
       )}
